@@ -47,7 +47,7 @@ namespace PublishXML.XmlCRUD
 
             docx.Save(basePath + newFileName + ".xml");
 
-            string xmlString = System.IO.File.ReadAllText(basePath + newFileName + ".xml");
+            string xmlString = File.ReadAllText(basePath + newFileName + ".xml");
             return xmlString;
         }
     }
