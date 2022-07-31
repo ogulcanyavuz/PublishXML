@@ -18,11 +18,9 @@ namespace PublishXML.Controllers
 
         public IActionResult Index()
         {
-
             XmlEdit xmlEdit = new XmlEdit();
-            xmlEdit.SaveXml("http://convert.stockmount.com/xml/publish/28094/xmloutlet", "ozelXML");
-
-            return View();
+     
+            return this.Content(xmlEdit.SaveXml("http://convert.stockmount.com/xml/publish/28094/xmloutlet", "ozelXML"), "text/xml", System.Text.Encoding.UTF8);
         }
 
         public IActionResult Privacy()

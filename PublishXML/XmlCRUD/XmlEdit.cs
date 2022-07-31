@@ -14,7 +14,7 @@ namespace PublishXML.XmlCRUD
         /// </summary>
         /// <param name="urlAdress">duzenlenmesi icin cekilecek xml urlsi</param> 
         /// <param name="fileName">kaydedilecek dosya ismi dosya wwwroot/XMLFiles/dosyaismi. xml olarak kaydedilecek</param>
-        public void SaveXml(string urlAdress,string fileName)
+        public string SaveXml(string urlAdress,string fileName)
         {
             using (WebClient wc = new WebClient())
             {
@@ -46,6 +46,9 @@ namespace PublishXML.XmlCRUD
             }
 
             docx.Save(basePath + newFileName + ".xml");
+
+            string xmlString = System.IO.File.ReadAllText(basePath + newFileName + ".xml");
+            return xmlString;
         }
     }
 }
